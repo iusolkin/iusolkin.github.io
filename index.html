@@ -282,13 +282,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/maskinput.js"></script>
     <script src="js/scripts.js"></script>
    <script>
-var match = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)'); var raw = (match) ? decodeURIComponent(match[1]) : null;
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var match = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)'); var raw = (match) ? decodeURIComponent(match[1]) : null;
 if (raw)
 {
 match = raw.match(/(\d+\.\d+)$/);
 }
 var gacid = (match) ? match[1] : null;
 alert(gacid);
+  });
    </script>
   </body>
 </html>
