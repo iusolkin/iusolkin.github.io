@@ -282,16 +282,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/maskinput.js"></script>
     <script src="js/scripts.js"></script>
    <script>
-setTimeout(function(){
- var match = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)'); var raw = (match) ? decodeURIComponent(match[1]) : null;
-if (raw)
-{
-match = raw.match(/(\d+\.\d+)$/);
+function is_gtm_loaded() {
+  let gtm_started_event = window.dataLayer.find(element => element['gtm.start']);
+  if (!gtm_started_event) {
+    return false; // Not even the GTM inline config has executed
+  }
+  elseif (!gtm_started_event['gtm.uniqueEventId']) {
+    return false; // GTM inline config has ran, but main GTM js is not loaded (likely AdBlock, NoScript, URL blocking etc.)
+  }
+  return alert('yes'); // GTM is fully loaded and working
 }
-var gacid = (match) ? match[1] : null;
-alert(gacid);
-
-}, 4500);
 
    </script>
     <script> 
