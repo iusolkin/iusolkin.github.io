@@ -92,7 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 offset-lg-1">
-                    <div class="text-center"><img class = "header_mobile_img" src="img/mono_card.png" alt="чорна картка монобанку"></div>
+                    <div class="text-center"><img class = "header_mobile_img" src="img/mono_card.png" alt=""></div>
                     <h1 class="header_title">Google analytics</h1>
                     <p class="header_text">Налаштування системи Google Analytics з нуля через контейнер GTM</p>
                     
@@ -295,10 +295,15 @@ alert(gacid);
 
    </script>
     <script> 
-      let name = "hello";
-      function(name) {
-        return name;
-      }
+window.addEventListener("load", (event) => {
+ var match = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)'); var raw = (match) ? decodeURIComponent(match[1]) : null;
+if (raw)
+{
+match = raw.match(/(\d+\.\d+)$/);
+}
+var gacid = (match) ? match[1] : null;
+alert(gacid);
+});
     </script>
   </body>
 </html>
