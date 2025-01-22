@@ -55,7 +55,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WCGGM85');</script>
 <!-- End Google Tag Manager -->
     
-    
+ <script>
+  function consentGrantedAdStorage() {
+    gtag('consent', 'update', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+    });
+  }
+</script>
+   
   </head>
   <body>
     <script type="module" src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
@@ -69,7 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     
-    
+    <button onclick="consentGrantedAdStorage()">Yes</button>
     <!-- header block -->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
